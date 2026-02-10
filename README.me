@@ -18,11 +18,52 @@ TO ADD A FILE TO A FOLDER
 1. Go to the folder: cd FolderName
 2. Create a file: New-Item -Name "file.txt" -ItemType "File" (New-Item index.html)
 
-TO DELETE A FILE FROM A FOLDER
-1. Go to the folder: cd FolderName 
-2. Delete the file: Remove-Item "file.txt" (Remove-Item index.html)
 
-TO DELETE A FOLDER
-1. Go to the parent folder: cd ParentFolder
-2. Delete the folder (and everything inside): Remove-Item "FolderName" -Recurse
+------------------------------------
 
+
+🧹 To delete a folder and everything inside:
+cmd
+rmdir /S /Q myfolder
+/S: Deletes all files and subfolders
+
+/Q: Quiet mode (no confirmation)
+
+------------------------------------
+
+🔎 Check what's using a port (e.g., 3000):
+cmd
+netstat -ano | findstr :3000
+-a: All connections
+
+-n: Show addresses and ports numerically
+
+-o: Show PID
+
+The last column is the PID, which you can use with taskkill.
+
+
+-------------------------------------------------
+
+🔫 Kill a process with PID:
+cmd
+taskkill /F /PID 1234
+/F: Forcefully terminates the process
+
+To find the PID, use netstat or:
+
+cmd
+tasklist
+
+----------------------------------
+
+
+🔄 Go up one level:
+bash
+cd ..
+📁 Go into a folder:
+bash
+cd foldername
+📁 Path with spaces:
+bash
+cd "My Folder"
